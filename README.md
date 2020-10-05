@@ -13,8 +13,36 @@ It uses datetime to get today's date.
 This date is inserted into the wikipedia URL
 The qrcode then generates a QRcode for that URL and the code is saved as a PNG.
 
-There are two shell scripts. They work in the linux terminal.
-One automatically installs the python dependences. 
-The other runs the script and then will automatically open the QRcode. 
+The QRcode's properties (size etc) is modifable. See comments in daily-wiki.py
 
-NOTE: The bash shell scripts run in the linux terminal
+There are bash shell scripts included. 
+They work in the linux terminal and will run the python script without
+having to type "python3 daily-wiki.py".
+
+The bash scripts: 
+
+Dependancies / install-dependancies.sh:
+  The following dependancies are required:
+    Python3 or newer
+    The following libraries:
+    qrcode
+    datetime
+    PIL
+    Image from PIL
+  You can automatically install all the dependancies by running
+  install-dependancies.sh. It will install/verify the above libraries
+  and python3 install.
+
+  start-program.sh 
+    This script is best used when you don't need to view the QRcode after creation.
+    Some examples:
+      You make a bot to tweet out the code each day;
+      You are going to display it on a Raspberry piHAT screen;
+      You are going to schedule the script to run once a day.
+  Imageviewing scripts:
+  PiOS-start-program.sh
+    This script is for Raspberry Pis running PiOS or Raspbian, maybe NOOBS.
+    It will launch the default imageviewer on PiOS, GPicView. 
+  start-program-xviewer
+    This script is to launch xviewer, my default image viewer program right after creation.
+    You can always modify the code to have it launch your favorite or needed program. 
